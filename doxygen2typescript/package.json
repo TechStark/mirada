@@ -13,7 +13,6 @@
     "format": "npx ts-refactor format \"src/**/*.ts*\" \"test/**/*.ts*\" ./formatCodeSettings.json --tsConfigPath ./tsconfig.json --dontAsk",
     "organizeImports": "npx ts-refactor organizeImports \"src/**/*.ts*\" \"test/**/*.ts*\" ./formatCodeSettings.json --tsConfigPath ./tsconfig.json --dontAsk ",
     "lint": " npm run organizeImports && npm run format",
-    "prepare": "npm run build ",
     "run": "npm run build && rm -rf tmp && node --max-old-space-size=5000  dist/src/test.js",
     "build": "npm run clean && npx tsc",
     "all": "npm run clean && npm run lint && npm run build && npm test && npm run test-js"
@@ -27,23 +26,21 @@
   ],
   "author": "Sebastián Gurin",
   "license": "MIT",
-  "devDependencies": {
-    "@types/jsdom": "^12.2.4",
-    "@types/node": "^12.7.5",
-    "@types/shelljs": "^0.8.5",
-    "ava": "^2.4.0",
-    "jimp": "^0.6.4",
-    "markdown-toc": "^1.2.0",
-    "npx": "^10.2.0",
-    "ts-node": "^8.4.1",
-    "ts-refactor": "0.0.9",
-    "typescript": "^3.6.3"
-  },
   "dependencies": {
-    "jsdom": "^15.1.1",
-    "misc-utils-of-mine-generic": "^0.2.32",
-    "shelljs": "^0.8.3",
-    "ts-simple-ast-extra": "^0.3.11"
+    "jsdom": "^20.0.0",
+    "misc-utils-of-mine-generic": "^0.2.43",
+    "shelljs": "^0.8.5",
+    "ts-morph": "^15.1.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^20.0.0",
+    "@types/node": "^18.0.6",
+    "@types/shelljs": "^0.8.11",
+    "ava": "^4.3.1",
+    "jimp": "^0.3.5",
+    "markdown-toc": "^1.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   },
   "repository": {
     "type": "git",
