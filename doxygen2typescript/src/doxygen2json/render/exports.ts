@@ -6,7 +6,7 @@ import { getTypeReferencesByDefinitionOrigin, Project } from 'ts-simple-ast-extr
 import { Doxygen2tsOptions } from '../doxygen2ts';
 import { renderImportHacks } from './exportsHacks';
 import { withoutTypeScriptExtension } from '../opencv2ts';
-import { TypeGuards, MethodDeclaration, PropertyDeclaration } from 'ts-morph';
+import { Node, MethodDeclaration, PropertyDeclaration } from 'ts-morph';
 
 export function writeIndexTs(o: Doxygen2tsOptions) {
   if (!o.onlyFix) {
@@ -101,7 +101,7 @@ function fixClasses(o: Doxygen2tsOptions) {
     asArray(removeMembers[k])
       .forEach(name => {
         const members = c.getMembers()
-          .filter(n => TypeGuards.isMethodDeclaration(n) || TypeGuards.isPropertyDeclaration(n))
+          .filter(n => Node.isMethodDeclaration(n) || Node.isPropertyDeclaration(n))
           .filter((n: MethodDeclaration | PropertyDeclaration) => n.getName() === name)
         if (!members.length) {
           return console.error(`Expected to find member ${name} in class ${k}`);

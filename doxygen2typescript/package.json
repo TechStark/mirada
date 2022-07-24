@@ -14,7 +14,7 @@
     "organizeImports": "npx ts-refactor organizeImports \"src/**/*.ts*\" \"test/**/*.ts*\" ./formatCodeSettings.json --tsConfigPath ./tsconfig.json --dontAsk ",
     "lint": " npm run organizeImports && npm run format",
     "run": "npm run build && rm -rf tmp && node --max-old-space-size=5000  dist/src/test.js",
-    "build": "npm run clean && npx tsc",
+    "build": "npm run clean && tsc",
     "all": "npm run clean && npm run lint && npm run build && npm test && npm run test-js"
   },
   "keywords": [
