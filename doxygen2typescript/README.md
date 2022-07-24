@@ -20,7 +20,7 @@ Nevertheless there is an alternative version of the tool that only consumes xml/
 
 First you need to build opencv.js docs with GENERATE_XML=yes. assets/Doxyfile is a working config.
 
-Then this code should generate the TS from given opencv.js biuld folder:
+Then this code should generate the TS from given opencv.js build folder:
 
 ```ts
 import { opencv2ts } from '../src'
